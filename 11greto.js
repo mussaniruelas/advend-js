@@ -1,10 +1,10 @@
-function decodeFilename(encodedFilename) {
+function decodeFilename(filename) {
   // Utilizamos una expresión regular para extraer la parte importante del nombre del archivo.
   // Explicación de la expresión regular:
   // ^\d+_    -> Coincide con un número al inicio seguido de un guion bajo.
   // (.+?)    -> Captura el nombre del archivo y su extensión de manera no codiciosa.
   // \.[^\.]+$ -> Coincide con la última extensión que no necesitamos.
-  const match = encodedFilename.match(/^\d+_(.+?)\.[^\.]+$/);
+  const match = filename.match(/^\d+_(.+?)\.[^\.]+$/);
 
   // Si hay una coincidencia, devolvemos la parte importante.
   return match ? match[1] : null;
